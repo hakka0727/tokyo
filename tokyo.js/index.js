@@ -78,8 +78,9 @@ for(var i = 0; i < nav.length; i++) {
   $(".popup").colorbox({
       fixed: true,
       iframe: true,
-      innerWidth: 640,
-      innerHeight: 359
+      //innerWidth: 640,
+     //innerHeight: 359
+      maxWidth: "90%",
   });
   
   
