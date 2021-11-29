@@ -505,3 +505,8 @@ line-height: 1.5rem;
         height:150px;
       }
         }
+@media (max-width:320px) {
+    #wrapper .contents section h1 {
+      font-size: 70px;
+    }
+        }
