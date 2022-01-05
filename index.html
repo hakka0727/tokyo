@@ -5,6 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 <title>TOKYO</title>
 <link rel="stylesheet" href="tokyo.style.css/tokyo.reset.css?20210615-2140">
 <link rel="stylesheet" href="tokyo.style.css/tokyo.colorbox.css?20210615-2140">
@@ -90,14 +91,26 @@
             </div>
         </section>
         <section id="section04" class="area fadein">
-            <div class="section-inner fadein">
+             <div class="section-inner fadein">
                 <h2>RECOMMEND</h2>
-                <ul>
+                <!--<ul>
                     <li><a class="popup" href="http://www.youtube.com/embed/Dk2Knub75MQ?rel=0&amp;wmode=transparent"><img src="tokyo.images/recommend/img01.jpg?20210615-2140"></a></li>
                     <li><a class="popup" href="tokyo.images/recommend/img02.L.jpg?20210615-2140"><img src="tokyo.images/recommend/img02.jpg?20210615-2140"></a></li>
                 </ul>
-            </div>
-        </section>
+            </div>-->
+            <label class="open" for="pop-up"> <ul>
+              <li><a class="popup" href="http://www.youtube.com/embed/Dk2Knub75MQ?rel=0&amp;wmode=transparent"><img src="tokyo.images/recommend/img01.jpg?20210615-2140"></a></li>
+              <li><a class="popup" href="tokyo.images/recommend/img02.L.jpg?20210615-2140"><img src="tokyo.images/recommend/img02.jpg?20210615-2140"></a></li>
+          </ul></label>
+<input type="checkbox" id="pop-up">
+<div class="overlay">
+	<div class="window">
+		<label class="close" for="pop-up">×</label>
+		<img src="画像のURL" alt="画像の説明">
+	</div>
+</div>
+        </section> 
+        
         <section id="section05" class="area fadein">
             <div class="section-inner">
                 <h2>TOKYO STATION</h2>
