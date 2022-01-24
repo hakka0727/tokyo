@@ -196,17 +196,6 @@ body {
   }
 
 
-/*ポップアップ*/
-#wrapper #section04 ul {
-  text-align: center;
-}
-
-  #wrapper #section04 ul li {
-      margin: 10px 0;
-  }
-
-
-
 
 /*コンテンツエリア*/
 #wrapper .contents section {
@@ -246,52 +235,176 @@ body {
   margin: 0 auto;
   filter:hue-rotate(330deg);-webkit-filter:hue-rotate(330deg);/*地図の色相を変更*/
 }
-
-/*POPUP*/
-.open {
-	cursor:pointer; /* マウスオーバーでカーソルの形状を変えることで、クリックできる要素だとわかりやすいように */
+popup
+.c {
+  text-align: center;
+}
+.overlay { /* グレーの背景 */
+position: fixed;
+background: rgba(0, 0, 0, 0.2);
+transition: all 0.5s 0s ease;
+visibility: hidden;
+opacity: 0;
+top: 0;
+left: 0;
+bottom: 0;
+right: 0;
 }
 #pop-up {
-	display: none; /* label でコントロールするので input は非表示に */
-}
-.overlay {
-	display: none; /* input にチェックが入るまでは非表示に */
+display: none;
 }
 #pop-up:checked + .overlay {
-	display: block;
-	z-index: 9999;
-	background-color: #00000070;
-	position: fixed;
-	width: 100%;
-	height: 100vh;
-	top: 0;
-	left: 0;
+visibility: visible;
+opacity: 1;
+z-index: 100000;
+background-color: #000000D0;
+width: 100%;
+height:150%;
 }
-.window {
-	width: 90vw;
-	max-width: 380px;
-	height: 240px;
-	background-color: #ffffff;
-	border-radius: 6px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+.popWindow {
+border-radius: 5px;
+/* overflow: auto; スクロールバー用 */
+max-height: 110%; /* すき間 */
+min-width: fit-content; /* 横幅が広い時に白の部分が大きくならないため */
+max-width: 110%; /* すき間 */
+position: fixed;
+top: 80%; 
+left: 50%; /* 中央に */
+transform: translate(-50%, -50%); /* 中央に */
+z-index: 100010;
+font-size: 13px;
+line-height: 18px;
+margin: 10px auto;
+padding: 4px 10px;
+background: #FFFD; /* 枠の色 */
+text-align: center; /* 文字を中央寄せ */
+transition: all 500ms ease-in-out;
 }
-.text {
-	font-size: 18px;
-	margin: 0;
+.popWindow .ptitle {
+font-size: 15px;
+margin: 8px;
+color: #333;
 }
-.close {
-	cursor:pointer;
-	position: absolute;
-	top: 4px;
-	right: 4px;
-	font-size: 20px;
+.popWindow .close {
+position: absolute;
+top: 8px;
+right: 10px;
+transition: all 300ms;
+font-size: 24px;
+line-height: inherit;
+font-weight: bold;
+text-decoration: none;
+color: #000;
+padding: 2px;
 }
+.popWindow .close:hover {
+color: #06D85F;
+}
+.popWindow::-webkit-scrollbar-track {
+background: none;
+}
+.popWindow::-webkit-scrollbar {
+width: 10px;
+height: 10px;
+}
+.popWindow::-webkit-scrollbar-thumb {
+background: #999;
+border-radius: 5px;
+}
+.clickable:hover {
+cursor: pointer;
+}
+@media screen and (max-width: 700px){
+#pop-up2:checked + .overlay2 {
+  visibility: hidden;
+  opacity: 0;
+}
+}
+  .c {
+    text-align: center;
+}
+.overlay { /* グレーの背景 */
+  position: fixed;
+  background: rgba(0, 0, 0, 0.2);
+  transition: all 0.5s 0s ease;
+  visibility: hidden;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+#pop-up {
+  display: none;
+}
+#pop-up:checked + .overlay {
+  visibility: visible;
+  opacity: 1;
+  z-index: 100000;
+  background-color: #000000D0;
+  width: 100%;
+  height: 180%;
+}
+.popWindow {
+  border-radius: 5px;
+  /* overflow: auto; スクロールバー用 */
+  max-height: 150%; /* すき間 */
+  min-width: fit-content; /* 横幅が広い時に白の部分が大きくならないため */
+  max-width: 95%; /* すき間 */
+  position: fixed;
+  top: 80%; 
+  left: 50%; /* 中央に */
+  transform: translate(-50%, -50%); /* 中央に */
+  z-index: 100010;
+  font-size: 13px;
+  line-height: 18px;
+  margin: 10px auto;
+  padding: 4px 10px;
+  background: #FFFD; /* 枠の色 */
+  text-align: center; /* 文字を中央寄せ */
+  transition: all 500ms ease-in-out;
+}
+.popWindow .ptitle {
+  font-size: 15px;
+  margin: 8px;
+  color: #333;
+}
+.popWindow .close {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  transition: all 300ms;
+  font-size: 24px;
+  line-height: inherit;
+  font-weight: bold;
+  text-decoration: none;
+  color: #000;
+  padding: 2px;
+}
+.popWindow .close:hover {
+  color: #06D85F;
+}
+.popWindow::-webkit-scrollbar-track {
+  background: none;
+}
+.popWindow::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+.popWindow::-webkit-scrollbar-thumb {
+  background: #999;
+  border-radius: 5px;
+}
+.clickable:hover {
+  cursor: pointer;
+}
+@media screen and (max-width: 700px){
+  #pop-up2:checked + .overlay2 {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
 /*他*/
 #wrapper .contents section#section01 .section-inner {
   position: relative;
